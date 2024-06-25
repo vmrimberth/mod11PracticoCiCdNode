@@ -1,7 +1,8 @@
 import express from "express";
 import { PORT } from "./config.js";
 import productRoutes from "./routes/product.routes.js";
-import clientRoutes from "./routes/client.routes.js"
+import clientRoutes from "./routes/client.routes.js";
+import employeRoutes from "./routes/employe.routes.js";
 import morgan from "morgan";
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(productRoutes);
 app.use(clientRoutes);
+app.use(employeRoutes);
 
 app.listen(PORT);
 
